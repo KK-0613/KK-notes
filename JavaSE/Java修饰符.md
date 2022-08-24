@@ -84,7 +84,7 @@ Java 程序的 main() 方法必须设置成公有的，否则，Java 解释器�
 protected 可以修饰数据成员，构造方法，方法成员，不能修饰类（内部类除外）。
 
 接口及接口的成员变量和成员方法不能声明为 protected。 可以看看下图演示：<br>
-![](https://cdn.jsdelivr.net/gh/KK-0613/KK-Image/java-protected.gif)
+![](https://cdn.jsdelivr.net/gh/KK-0613/KK-Image/java-protected.gif)<br>
 子类能访问 protected 修饰符声明的方法和变量，这样就能保护不相关的类使用这些方法和变量。
 
 下面的父类使用了 protected 访问修饰符，子类重写了父类的 openSpeaker() 方法。
