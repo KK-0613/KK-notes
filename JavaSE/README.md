@@ -6,4 +6,9 @@
 4. [Java基本数据类型](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/Java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.md)
 5. [Java变量类型](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/Java%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.md)
 6. [Java修饰符](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/Java%E4%BF%AE%E9%A5%B0%E7%AC%A6.md)
-7. [Java运算符]()
+7. [Java运算符](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/Java%E8%BF%90%E7%AE%97%E7%AC%A6.md)
+8. [Java循环结构](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/Java%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84.md)
+9. [Java条件语句](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/Java%20%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5.md)
+10. [Java switch case语句](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/Java%20switch%20case%20%E8%AF%AD%E5%8F%A5.md)
+11. [Java Number & Math 类](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/Java%20Number%20%26%20Math%20%E7%B1%BB.md)
+12. 
