@@ -1,5 +1,5 @@
 # JavaSE笔记
-## 建议阅读目录
+## 个人学习路径
 1. [JavaSE(前置工作)](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/Java%20SE%EF%BC%88%E5%89%8D%E7%BD%AE%E5%B7%A5%E4%BD%9C%EF%BC%89.md)
 2. [JavaSE基础语法](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/JavaSE%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95.md)
 3. [Java对象和类](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/Java%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB.md)
