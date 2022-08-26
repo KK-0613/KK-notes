@@ -11,4 +11,7 @@
 9. [Java条件语句](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/Java%20%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5.md)
 10. [Java switch case语句](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/Java%20switch%20case%20%E8%AF%AD%E5%8F%A5.md)
 11. [Java Number & Math 类](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/Java%20Number%20%26%20Math%20%E7%B1%BB.md)
-12. 
+12. [Java数组](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/Java%E6%95%B0%E7%BB%84.md)
+    - [数组案例练习](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/%E6%95%B0%E7%BB%84%E6%A1%88%E4%BE%8B%E7%BB%83%E4%B9%A0.md)
+
+13. 
