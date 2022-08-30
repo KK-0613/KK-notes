@@ -1,5 +1,6 @@
-# JavaSE笔记
-## 个人学习笔记
+# Java入门笔记
+## 索引
+
 1. [JavaSE(前置工作)](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/Java%20SE%EF%BC%88%E5%89%8D%E7%BD%AE%E5%B7%A5%E4%BD%9C%EF%BC%89.md)
 2. [JavaSE基础语法](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/JavaSE%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95.md)
 3. [Java对象和类](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/Java%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB.md)
@@ -23,4 +24,6 @@
 
 17. [综合案例练习](https://github.com/KK-0613/KK-notes/blob/main/JavaSE/%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B%E7%BB%83%E4%B9%A0.md)
 
-18. 
+18. [面向对象入门案例](https://github.com/KK-0613/KK-notes/blob/main/Java/Java%E5%85%A5%E9%97%A8/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B.md)
+
+19. 
