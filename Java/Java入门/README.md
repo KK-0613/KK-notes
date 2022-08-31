@@ -26,4 +26,6 @@
 
 18. [面向对象入门案例](https://github.com/KK-0613/KK-notes/blob/main/Java/Java%E5%85%A5%E9%97%A8/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B.md)
 
-19. 
+19. [Java String类](https://github.com/KK-0613/KK-notes/blob/main/Java/Java%E5%85%A5%E9%97%A8/Java%20String%E7%B1%BB.md)
+
+20. 
