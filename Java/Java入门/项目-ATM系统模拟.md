@@ -4,6 +4,8 @@
 
 ![](https://cdn.jsdelivr.net/gh/KK-0613/KK-Image/20220901155924.png)
 
+
+
 ## 技术选型
 
 ![](https://cdn.jsdelivr.net/gh/KK-0613/KK-Image/20220901155608.png)
@@ -34,6 +36,119 @@
 
 ### 代码实现
 
+账户类：
+
+```java
+package com.kk.atm;
+
+/**
+ * @ClassName Account
+ * @Description //TODO
+ * @Author kk
+ * @Date 2022/9/1 16:33
+ * @Version 1.0
+ **/
+public class Account {
+    private String cardId; //卡号
+    private String name; //姓名
+    private String password; //密码
+    private double balance; //余额
+    private double cashWithdrawalAmount;//取现额度
+
+    public Account() {
+    }
+
+    public Account(String cardId, String name, String password, double balance, double cashWithdrawalAmount) {
+        this.cardId = cardId;
+        this.name = name;
+        this.password = password;
+        this.balance = balance;
+        this.cashWithdrawalAmount = cashWithdrawalAmount;
+    }
+
+    public String getCardId() {
+        return cardId;
+    }
+
+    public void setCardId(String cardId) {
+        this.cardId = cardId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public double getCashWithdrawalAmount() {
+        return cashWithdrawalAmount;
+    }
+
+    public void setCashWithdrawalAmount(double cashWithdrawalAmount) {
+        this.cashWithdrawalAmount = cashWithdrawalAmount;
+    }
+}
+
+```
+
+主类：
+
+```java
+package com.kk.atm;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ * @ClassName main
+ * @Description //TODO
+ * @Author kk
+ * @Date 2022/9/1 16:39
+ * @Version 1.0
+ **/
+public class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Account> accounts = new ArrayList<>();
+
+        System.out.println("=========欢迎您进入KK银行ATM系统=========");
+        System.out.println("1.登录账户");
+        System.out.println("2.注册开户");
+        System.out.print("请输入指令1、2选择对应的操作：");
+        int command = sc.nextInt();
+      	switch (command) {
+            case 1:
+                login();
+                break;
+            case 2:
+                register(sc, accounts);
+                break;
+        }
+    }
+}
+	
+```
+
+
+
 
 
 ## 用户开户功能实现
@@ -61,6 +176,59 @@
 5. 把Account账户类对象存入到集合accounts中去。
 
 ### 代码实现
+
+```java
+public static void register(Scanner sc, ArrayList<Account> accounts) {
+        Random r = new Random();
+        Account account = new Account();
+        String carId = "";
+        System.out.println("==========欢迎您进入KK银行开户系统=========");
+        System.out.println("请输入您的姓名：");
+        account.setName(sc.next());
+        System.out.println("请输入您的密码：");
+        account.setPassword(sc.next());
+        while (true) {
+            System.out.println("请确认您的密码：");
+            if (account.getPassword().equals(sc.next())) {
+                System.out.println("请输入您的取现额度：");
+                account.setCashWithdrawalAmount(sc.nextDouble());
+                break;
+            } else {
+                System.out.println("两次输入的密码不一致，请重新输入：");
+            }
+        }
+        for (int i = 0; i < 8; i++) {
+            int x = r.nextInt(0, 9);
+            carId = carId + x;
+        }
+        account.setCardId(carId);
+        System.out.println(account.getName()
+                + "贵宾，您的账户已开户成功，您的卡号是：" + account.getCardId());
+
+    }
+```
+
+返回结果
+
+```j
+=========欢迎您进入KK银行ATM系统=========
+1.登录账户
+2.注册开户
+请输入指令1、2选择对应的操作：2
+==========欢迎您进入KK银行开户系统=========
+请输入您的姓名：
+kk
+请输入您的密码：
+123456
+请确认您的密码：
+123
+两次输入的密码不一致，请重新输入：
+请确认您的密码：
+123456
+请输入您的取现额度：
+3000
+kk贵宾，您的账户已开户成功，您的卡号是：68138531
+```
 
 
 
