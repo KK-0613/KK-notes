@@ -475,6 +475,41 @@ public class Demo01 {
 
 ```
 
+测试类
+
+```java
+package com.kk.static_demo;
+
+/**
+ * @ClassName
+ * @Description //TODO
+ * @Author kk
+ * @Date 2022/9/6 20:35
+ * @Version 1.0
+ **/
+
+public class Demo01 {
+    //饿汉单例设计模式
+    public static void main(String[] args) {
+        SingleInstance s1 = SingleInstance.instance;
+        SingleInstance s2 = SingleInstance.instance;
+
+        System.out.println(s1 == s2);
+    }
+
+}
+
+```
+
+返回结果
+
+```
+初始化了一个对象
+true
+```
+
+
+
 ### 懒汉单例设计模式
 
 - 在真正需要该对象的时候，才去创建一个对象(延迟加载对象)
@@ -490,22 +525,37 @@ public class Demo01 {
 ```java
 /** 定义一个单例类 */
 
-    class SingleInstance {
-        /**
-         * 定义一个静态变量存储一个对象即可 :属于类，与类一起加载一次
-         */
-        public static SingleInstance instance;// null    
+    public class SingleInstance2 {
 
-        // /** 单例必须私有构造器*/    
-        private SingleInstance() {
-        }
-
-        /**
-         * 必须提供一个方法返回一个单例对象
-         */
-        public static SingleInstance getInstance() {
-            ...
-            return ...;
-        }
+    //2.定义一个静态成员变量存储一个对象即可：属于类，只加载一次
+    public static SingleInstance2 instance2;
+    //1.私有化构造器
+    private SingleInstance2(){
     }
+    /*
+    3.提供一个方法返回一个单例对象
+     */
+    public static SingleInstance2 getInstance() {
+        System.out.println("初始化了一个对象");
+        return instance2;
+    }
+}
 ```
+
+测试类
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        SingleInstance2 s = SingleInstance2.instance2;
+        s.getInstance();
+    }
+}
+```
+
+返回结果
+
+```
+初始化了一个对象
+```
+

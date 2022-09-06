@@ -102,3 +102,250 @@
 - super(...)：在本类构造器中指定访问父类的构造器
 - super(...)、this(...)都必须放在第一行，所以两者不能共存在一个构造器中
 
+## 继承案例练习：学生教师类都继承自人类
+
+### 需求
+
+1. 人类：
+
+   - 成员变量：姓名、年龄
+
+   - 构造方法：无参、有参
+   - 成员方法：看课表
+
+2. 教师类：
+
+   - 成员变量：职称
+   - 构造方法：自身无参，有参，带有继承自父类的成员变量的有参
+   - 成员方法：getter/setter，备课，重写父类的看课表方法
+
+3. 学生类：
+
+   - 成员变量：学号
+   - 构造方法：自身无参，有参，带有继承自父类的成员变量的有参
+   - 成员方法：getter/setter，考试
+
+4. 测试类：
+
+创建一个学生对象和一个老师对象，要求分别通过学生对象和教师对象设置其姓名年龄，并且都完成看课表的操作，同时学生完成考试，教师完成备课
+
+### 实现
+
+人类
+
+```java
+package com.kk.extends_demo;
+
+/**
+ * @ClassName
+ * @Description //TODO
+ * @Author kk
+ * @Date 2022/9/6 22:15
+ * @Version 1.0
+ **/
+
+public class People {
+    String name;
+    int age;
+
+    public People(){
+    }
+
+    public People(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void queryScheduler(){
+        System.out.println("周一：语文，数学");
+        System.out.println("周二：英语，数学");
+        System.out.println("周三：语文，英语");
+        System.out.println("......");
+    }
+}
+
+```
+
+教师类
+
+```java
+package com.kk.extends_demo;
+
+/**
+ * @ClassName
+ * @Description //TODO
+ * @Author kk
+ * @Date 2022/9/6 22:16
+ * @Version 1.0
+ **/
+
+public class Teacher extends People{
+    private String title;
+
+    public Teacher() {
+    }
+
+    public Teacher(String title) {
+        this.title = title;
+    }
+
+    public Teacher(String name, int age, String title) {
+        super(name, age);
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getName() {
+        return super.name;
+    }
+
+    public void setName(String name) {
+        super.name = name;
+    }
+
+    public int getAge() {
+        return super.age;
+    }
+
+    public void setAge(int age) {
+        super.age = age;
+    }
+
+    public void preparing(){
+        System.out.println(super.age+"的"+this.title+":"+super.name+"在备课");
+    }
+}
+
+```
+
+学生类
+
+```java
+package com.kk.extends_demo;
+
+/**
+ * @ClassName
+ * @Description //TODO
+ * @Author kk
+ * @Date 2022/9/6 22:16
+ * @Version 1.0
+ **/
+
+public class Student extends People{
+    private String stuId;
+    private String stuMajor;
+
+    public Student(String stuId, String stuMajor) {
+        this.stuId = stuId;
+        this.stuMajor = stuMajor;
+    }
+
+    public Student(String name, int age, String stuId, String stuMajor) {
+        super(name, age);
+        this.stuId = stuId;
+        this.stuMajor = stuMajor;
+    }
+
+    public String getStuId() {
+        return stuId;
+    }
+
+    public void setStuId(String stuId) {
+        this.stuId = stuId;
+    }
+
+    public String getStuMajor() {
+        return stuMajor;
+    }
+
+    public void setStuMajor(String stuMajor) {
+        this.stuMajor = stuMajor;
+    }
+    public String getName() {
+        return super.name;
+    }
+
+    public void setName(String name) {
+        super.name = name;
+    }
+
+    public int getAge() {
+        return super.age;
+    }
+
+    public void setAge(int age) {
+        super.age = age;
+    }
+
+    @Override
+    public void queryScheduler(){
+        System.out.println("周一：语文，数学");
+        System.out.println("周二：英语，数学");
+        System.out.println("周三：语文，英语");
+        System.out.println("周四：英语，数学");
+        System.out.println("周五：音乐，体育");
+    }
+    public void test(){
+        System.out.println(this.stuMajor + "专业中，学号是:" + this.stuId + "的"+ super.age+ "岁" + super.name + "同学参加了考试");
+    }
+}
+
+```
+
+测试类：
+
+```java
+package com.kk.extends_demo;
+
+/**
+ * @ClassName
+ * @Description //TODO
+ * @Author kk
+ * @Date 2022/9/6 23:02
+ * @Version 1.0
+ **/
+
+public class Test {
+    public static void main(String[] args) {
+        Student s = new Student("201912775","计算机工程");
+        Teacher t = new Teacher("高级教师");
+
+        s.setName("王小五");
+        s.setAge(21);
+
+        t.setName("张劫");
+        t.setAge(33);
+
+        s.queryScheduler();
+        s.test();
+
+        t.queryScheduler();
+        t.preparing();
+    }
+}
+
+```
+
+返回结果
+
+```
+周一：语文，数学
+周二：英语，数学
+周三：语文，英语
+周四：英语，数学
+周五：音乐，体育
+计算机工程专业中，学号是:201912775的21岁王小五同学参加了考试
+周一：语文，数学
+周二：英语，数学
+周三：语文，英语
+......
+33的高级教师:张劫在备课
+```
+
