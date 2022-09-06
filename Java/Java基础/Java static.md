@@ -448,3 +448,64 @@ public class Demo01 {
 - 懒汉单例模式。 
 
 - …
+
+### 饿汉单例模式
+
+- 在用类获取对象的时候，对象已经提前为你创建好了
+
+#### 设计步骤：
+
+- 定义一个类，把构造器私有。
+
+- 定义一个静态变量存储一个对象。
+
+#### 代码实现
+
+```java
+    /** a、定义一个单例类 */
+    public class SingleInstance {
+        /** c.定义一个静态变量存储一个对象即可 :属于类，与类一起加载一次 */
+        public static SingleInstance instance = new SingleInstance();    
+        /** b.单例必须私有构造器*/
+
+        private SingleInstance() {
+            System.out.println("创建了一个对象");
+        }
+    }
+
+```
+
+### 懒汉单例设计模式
+
+- 在真正需要该对象的时候，才去创建一个对象(延迟加载对象)
+
+#### 设计步骤：
+
+- 定义一个类，把构造器私有
+- 定义一个静态变量存储一个对象
+- 提供一个返回单例对象的方法
+
+#### 代码实现
+
+```java
+/** 定义一个单例类 */
+
+    class SingleInstance {
+        /**
+         * 定义一个静态变量存储一个对象即可 :属于类，与类一起加载一次
+         */
+        public static SingleInstance instance;// null    
+
+        // /** 单例必须私有构造器*/    
+        private SingleInstance() {
+        }
+
+        /**
+         * 必须提供一个方法返回一个单例对象
+         */
+        public static SingleInstance getInstance() {
+            ...
+            return ...;
+        }
+    }
+```
