@@ -1,4 +1,4 @@
-#                                 day01面向对象
+#                                 static、继承、抽象案例练习
 
 # 简答题:
 
@@ -427,7 +427,7 @@ public class Test {
 
 ### 训练提示
 
-![1568715106034](img/1568715106034.png)
+![](https://cdn.jsdelivr.net/gh/KK-0613/KK-Image/20220908222840.png)
 
 ### 参考方案
 
