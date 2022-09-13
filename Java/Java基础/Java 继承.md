@@ -35,7 +35,7 @@
 
 ### 内存原理（重要）
 
-![](https://cdn.jsdelivr.net/gh/KK-0613/KK-Image/20220906210951.png)
+​	![](https://cdn.jsdelivr.net/gh/KK-0613/KK-Image/20220906210951.png)
 
 ### 继承的特点
 
