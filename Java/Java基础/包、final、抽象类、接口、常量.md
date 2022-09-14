@@ -78,5 +78,91 @@
 - 枚举是Java中的一种特殊类型。
 - 枚举的作用："是为了做信息的标志和信息的分类"。
 
-定义枚举类的格式：
+### 定义枚举类的格式：
 
+```java
+修饰符 enum 枚举名称{
+    第一行都是罗列枚举类实例的名称。
+}
+//例
+enum SeasonDemo01 {
+    SPRING,SUMMER,AUTUMN,WINTER;
+}
+//测试
+public class Demo01{
+    public static void main(String[] args) {
+        System.out.println(SeasonDemo01.SPRING);
+        System.out.println(SeasonDemo01.SUMMER);
+    }
+}
+//运行结果
+SPRING
+SUMMER
+```
+
+### 枚举的特征
+
+**反编译枚举类**
+
+```java
+  Compiled from "Season.java"
+
+public final class Season extends java.lang.Enum<Season> {
+    public static final Season SPRING = new Season();
+    public static final Season SUMMER = new Season();
+    public static final Season AUTUMN = new Season();
+    public static final Season WINTER = new Season();
+
+    public static Season[] values();
+
+    public static Season valueOf(java.lang.String);
+}
+
+```
+
+**特征**
+
+- 枚举类都是继承了枚举类型：java.lang.Enum
+
+- 枚举都是最终类，不可以被继承。
+
+- 构造器都是私有的，枚举对外不能创建对象。
+
+- 枚举类的第一行默认都是罗列枚举对象的名称的。
+
+- 枚举类相当于是多例模式。
+
+# 抽象类
+
+## 概念
+
+- 在Java中abstract是抽象的意思，可以修饰类、成员方法。
+- abstract修饰类，这个类就是抽象类；修饰方法，这个方法就是抽象方法。
+
+```java
+修饰符 abstract class 类名{ 
+	修饰符 abstract 返回值类型 方法名称(形参列表)；
+ }
+```
+
+```java
+public abstract class Animal {
+    public abstract void run();
+}
+```
+
+## 特点
+
+- 抽象方法只有方法签名，不能声明方法体。
+- 一个类中如果定义了抽象方法，这个类必须声明成抽象类，否则报错。
+
+## 使用场景
+
+- 抽象类可以理解成不完整的设计图，一般作为父类，让子类来继承。
+- 当父类知道子类一定要完成某些行为，但是每个子类该行为的实现又不同，于是该父类就把该行为定义成抽象方法的形式，具体实现交给子类去完成。此时这个类就可以声明成抽象类。
+
+```java
+public abstract class Animal {
+    public abstract void run();
+}
+```
