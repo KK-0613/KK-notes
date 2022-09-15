@@ -208,87 +208,176 @@ public abstract class Animal {
 
 #### 代码实现
 
-
-
-
-
-# 面向对象三大特征之三：多态
-
-## 概述
-
-### 什么是多态？
-
-- 指对象可以有多种形态。
-
-### 多态的多种形式
-
- ```java
- 父类类型 对象名称 = new 子类构造器;
- ```
-
-### 多态中成员访问特点
-
-- 方法调用：编译看左边，运行看右边
-- 变量调用：编译看左边，运行也看左边
-
-### 多态的前提
-
-- 有继承/实现关系；有父类引用指向子类对象；有方法重写（多态侧重行为多态）
-
-## 优势
-
-- 在多态形式下，右边对象可以实现解耦合，便于扩展和维护。
-
-  ```java 
-  Animal a = new Dog();
-  a.run(); // 后续业务行为随对象而变，后续代码无需修改
-  ```
-
-- 定义方法的时候，使用父类型作为参数，该方法就可以接收这父类的一切子类对象，体现出多态的扩展性与便利。
-
-## 问题
-
-- 多态下不能使用子类的独有功能
-
-## 多态下的类型转换问题
-
-### 自动类型转换（从子到父）：
+学生类
 
 ```java
-Animal c = new Cat();
+package com.kk.essay;
+
+/**
+ * @ClassName
+ * @Description //TODO
+ * @Author kk
+ * @Date 2022/9/14 17:53
+ * @Version 1.0
+ **/
+
+public abstract class Student {
+    private String stuId;
+    private String name;
+
+    public Student() {
+    }
+
+    public Student(String stuId, String name) {
+        this.stuId = stuId;
+        this.name = name;
+    }
+
+    public String getStuId() {
+        return stuId;
+    }
+
+    public void setStuId(String stuId) {
+        this.stuId = stuId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    //作文第一段
+    public final void first(){
+        System.out.println("第一段。");
+    }
+    //中间正文
+    public abstract void midEssay();
+    //最后一段
+    public final void end(){
+        System.out.println("最后一段。");
+    }
+}
+
 ```
 
-### 强制类型转换（从父到子）：
+初中生类
 
-- 从父到子（ 必须进行强制类型转换,否则报错）:  子类 对象变量 = (子类)父类类型的变量
+```java 
+package com.kk.essay;
 
-- 作用：可以解决多态下的劣势，可以实现调用子类独有的功能。 
+/**
+ * @ClassName
+ * @Description //TODO
+ * @Author kk
+ * @Date 2022/9/14 18:02
+ * @Version 1.0
+ **/
 
-- 注意： 有继承/实现关系的类就可以在编译阶段进行强制类型转换；但是，如果转型后的类型和对象真实对象的类型不是同一种类型，那么在运行代码时，就会出现ClassCastException
+public class JuniorHighSchool extends Student{
+    private static final String LEVEL="初中生";
 
-  ```java
-  Animal c = new Cat();
-  Dog d = (Dog)c; // 出现异常 ClassCastException
-  ```
+    public JuniorHighSchool() {
+    }
 
-- Java建议强转转换前使用instanceof判断当前对象的真实类型，再进行强制转换
+    public JuniorHighSchool(String stuId, String name) {
+        super(stuId, name);
+    }
+    public static String getLEVEL(){
+        return LEVEL;
+    }
+
+    @Override
+    public void midEssay() {
+        System.out.println("我是一个" + LEVEL);
+    }
+}
+
+```
+
+高中生类
 
 ```java
-变量名 instanceof 真实类型
-判断关键字左边的变量指向的对象的真实类型，是否是右边的类型或者是其子类类型，是则返回true，反之返回false
+package com.kk.essay;
+
+/**
+ * @ClassName
+ * @Description //TODO
+ * @Author kk
+ * @Date 2022/9/14 18:11
+ * @Version 1.0
+ **/
+
+public class HighSchool extends Student{
+    private static final String LEVEL = "高中生";
+
+    public HighSchool() {
+    }
+
+    public HighSchool(String stuId, String name) {
+        super(stuId, name);
+    }
+    public static String getLEVEL(){
+        return LEVEL;
+    }
+    @Override
+    public void midEssay() {
+        System.out.println("我是个" + LEVEL);
+    }
+}
+
 ```
 
-## 多态案例：模拟开发一款动物表演类的游戏
+测试类
 
-### 需求
+```java
+package com.kk.essay;
 
-- 模拟开发一款动物表演类的游戏
+/**
+ * @ClassName
+ * @Description //TODO
+ * @Author kk
+ * @Date 2022/9/14 18:15
+ * @Version 1.0
+ **/
 
-### 分析
+public class Test {
+    public static void main(String[] args) {
+        HighSchool h = new HighSchool("20191201","周芷若");
+        JuniorHighSchool j = new JuniorHighSchool("20221201","张无忌");
 
-1. 定义一个USB的接口（申明USB设备的规范必须是：可以接入和拔出）。
-2. 提供2个USB实现类代表鼠标和键盘，让其实现USB接口，并分别定义独有功能。
-3. 创建电脑对象，创建2个USB实现类对象，分别安装到电脑中并触发功能的执行。
+        System.out.println(HighSchool.getLEVEL() + "的作文：");
+        h.first();
+        h.midEssay();
+        h.end();
+        System.out.println("==========================================");
+        System.out.println(JuniorHighSchool.getLEVEL() + "的作文：");
+        j.first();
+        j.midEssay();
+        j.end();
+    }
+}
 
-### 代码实现
+```
+
+返回结果
+
+```
+高中生的作文：
+第一段。
+我是个高中生
+最后一段。
+==========================================
+初中生的作文：
+第一段。
+我是一个初中生
+最后一段。
+
+```
+
+
+
+
 
