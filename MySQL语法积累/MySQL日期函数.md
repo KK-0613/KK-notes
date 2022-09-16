@@ -52,9 +52,7 @@ unit 的可选值:
 | MINUTE | SECOND_MICROSECOND | YEAR_MONTH      | MINUTE_SECOND      |
 
 
-示例如下：
-
-​    ![](https://cdn.jsdelivr.net/gh/KK-0613/KK-Image/20220916164527.png)
+示例如下：    ![](https://cdn.jsdelivr.net/gh/KK-0613/KK-Image/20220916164527.png)
 
 6. DATE_ADD()  :  给日期添加指定的时间间隔
 
