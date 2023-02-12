@@ -1,0 +1,23 @@
+{
+    "created_time": "2023-02-12T14:41:10Z",
+    "files": [
+    ],
+    "folders": [
+        {
+            "name": "Java入门"
+        },
+        {
+            "name": "Java基础"
+        },
+        {
+            "name": "Java进阶"
+        },
+        {
+            "name": "Java高级"
+        }
+    ],
+    "id": "19",
+    "modified_time": "2023-02-12T14:41:10Z",
+    "signature": "55965100079750",
+    "version": 3
+}
