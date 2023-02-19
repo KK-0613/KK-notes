@@ -23,3 +23,4 @@ https://github.com/KK-0613/KK-APP/blob/main/typora/typora-setup-x64.exe
 ## 将获取的token复制到picgo图床
 
 ![image-20230212192318555](https://cdn.jsdelivr.net/gh/KK-0613/KK-image/image-20230212192318555.png)
+然后在picgo添加图床即可
