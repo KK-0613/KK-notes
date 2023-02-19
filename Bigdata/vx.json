@@ -7,13 +7,13 @@
             "name": "Bigdata入门"
         },
         {
-            "name": "Bigdata进阶"
-        },
-        {
-            "name": "Bigdata高级"
-        },
-        {
             "name": "SQL"
+        },
+        {
+            "name": "Hadoop"
+        },
+        {
+            "name": "Zookeeper"
         }
     ],
     "id": "3",
